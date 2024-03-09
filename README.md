@@ -2,7 +2,12 @@
 
 ### Reference Documentation
 
-
+The project is divided into these packages:
+* Config: which contains different configuration classes for CORS, security, filters, etc ...
+* Domain: package that contains the entities and the repositories they operate on.
+* Dto: contains the request and response objects.
+* Controllers: contains the controllers which are responsible for handling requests and responses.
+* Services: package that encapsulates the business logic of the application.
 
 ### Guides
 
@@ -40,3 +45,13 @@ $ docker build -t sandwich .
 ```
 $ docker run --name sandwich -p 8080:8080 -d sandwich
 ```
+### Add Hazelcast to project
+Add the hazelcast dependency to the pom.xml file in the root of the project
+```
+<dependency>
+    <groupId>com.hazelcast</groupId>
+    <artifactId>hazelcast-spring</artifactId>
+    <version>${hazelcast.version}</version>
+</dependency>
+```
+Then configure it using hazelcast.yaml file in src/main/resources/ directory.
